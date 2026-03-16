@@ -1,0 +1,12 @@
+title: Leedham and Associates
+description: Practical Technology Solutions for Modern Organizations
+theme: minimal-mistakes-jekyll
+
+url: "https://landa-it.github.io"
+baseurl: ""
+
+minimal_mistakes_skin: default
+
+author:
+  name: Leedham and Associates
+  bio: Practical Technology Solutions for Modern Organizations
