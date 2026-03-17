@@ -6,9 +6,6 @@ excerpt: "Practical Technology Solutions for Modern Organizations"
 header:
   overlay_color: "#1f2937"
   overlay_filter: 0.35
-  actions:
-    - label: "Our Services"
-      url: /services/
 feature_row:
   - title: "Strategy"
     excerpt: "Technology planning aligned with organizational priorities and long-term goals."
