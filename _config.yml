@@ -1,21 +1,20 @@
-title: Leedham and Associates
-description: Practical Technology Solutions for Modern Organizations
-
-remote_theme: "mmistakes/minimal-mistakes"
-plugins:
-  - jekyll-include-cache
+title: "Leedham and Associates"
+description: "Practical Technology Solutions for Modern Organizations"
 
 url: "https://paulleedham74.github.io"
 baseurl: "/paulleedham74-landaIT"
 
-minimal_mistakes_skin: default
-logo: null
+remote_theme: "mmistakes/minimal-mistakes@4.28.0"
+
+plugins:
+  - jekyll-include-cache
+
+minimal_mistakes_skin: "default"
 
 atom_feed:
   hide: true
 
 search: false
-breadcrumbs: false
 
 defaults:
   - scope:
