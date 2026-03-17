@@ -1,25 +1,21 @@
 ---
-layout: single
 title: "Services"
 permalink: /services/
+layout: single
 ---
 
 ## Strategy
 
-Technology strategy, digital transformation planning,
-and IT governance.
+Technology planning and modernization roadmaps.
 
 ## Data Management
 
-Data architecture, analytics platforms, reporting,
-and information governance.
+Reporting, governance, analytics, and information organization.
 
 ## Application Development
 
-Custom applications and automation that improve
-organizational efficiency.
+Custom applications and workflow automation.
 
 ## IT Consulting
 
-Independent technology guidance to support
-modern infrastructure and cloud adoption.
+Independent guidance on systems, implementation, and digital transformation.
