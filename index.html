@@ -58,7 +58,6 @@
       box-shadow: 0 14px 34px rgba(7, 18, 35, 0.22);
     }
 
- 
     .site-header::after {
       content: "";
       display: block;
@@ -75,40 +74,35 @@
       padding: 0.65rem 0;
     }
 
-  .brand {
-  display: flex;
-  align-items: center;
-  gap: 1.15rem;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+    }
 
-.brand-logo {
-  width: 108px;
-  height: 108px;
-  object-fit: contain;
-  flex-shrink: 0;
+    .brand-logo {
+      width: 108px;
+      height: 108px;
+      object-fit: contain;
+      flex-shrink: 0;
+      padding: 4px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.14);
+      filter:
+        drop-shadow(0 0 10px rgba(31,111,224,0.9))
+        drop-shadow(0 0 24px rgba(31,111,224,0.7))
+        drop-shadow(0 10px 28px rgba(0,0,0,0.55));
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
 
-  padding: 4px;
-  border-radius: 22px;
-  background: linear-gradient(145deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
-  border: 1px solid rgba(255,255,255,0.14);
-
-  filter:
-    drop-shadow(0 0 10px rgba(31,111,224,0.9))
-    drop-shadow(0 0 24px rgba(31,111,224,0.7))
-    drop-shadow(0 10px 28px rgba(0,0,0,0.55));
-}
-
-.brand-logo {
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.brand:hover .brand-logo {
-  transform: scale(1.05);
-  filter: 
-    drop-shadow(0 0 8px rgba(31,111,224,0.8))
-    drop-shadow(0 0 18px rgba(31,111,224,0.6))
-    drop-shadow(0 10px 22px rgba(0,0,0,0.45));
-}
+    .brand:hover .brand-logo {
+      transform: scale(1.05);
+      filter:
+        drop-shadow(0 0 8px rgba(31,111,224,0.8))
+        drop-shadow(0 0 18px rgba(31,111,224,0.6))
+        drop-shadow(0 10px 22px rgba(0,0,0,0.45));
+    }
 
     .brand-text {
       display: flex;
@@ -118,17 +112,17 @@
     }
 
     .brand-name {
-  font-size: 1.72rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: #ffffff;
-  line-height: 1.02;
-}
+      font-size: 1.72rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      line-height: 1.02;
+    }
 
     .brand-tag {
-  font-size: 0.94rem;
-  color: rgba(255,255,255,0.80);
-}
+      font-size: 0.94rem;
+      color: rgba(255,255,255,0.80);
+    }
 
     .nav-links {
       display: flex;
@@ -181,6 +175,11 @@
       color: var(--primary) !important;
     }
 
+    .nav-links a.nav-cta.active {
+      background: #ffffff;
+      color: var(--primary) !important;
+    }
+
     .menu-toggle {
       display: none;
       border: 1px solid rgba(255,255,255,0.16);
@@ -218,7 +217,6 @@
     .panel,
     .service-card,
     .contact-card,
-    .info-card,
     .service-row {
       background: var(--surface);
       border: 1px solid rgba(195, 209, 229, 0.95);
@@ -346,7 +344,6 @@
     .section-head p,
     .service-card p,
     .panel p,
-    .info-card p,
     .contact-card p,
     .list-text {
       color: var(--muted);
@@ -389,13 +386,11 @@
     }
 
     .service-card,
-    .info-card,
     .contact-card {
       padding: 1.4rem;
     }
 
     .service-card h3,
-    .info-card h3,
     .contact-card h3 {
       margin: 0 0 0.55rem;
       font-size: 1.15rem;
@@ -437,8 +432,7 @@
       font-weight: 800;
     }
 
-    .mini-grid,
-    .info-grid {
+    .mini-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
@@ -476,19 +470,6 @@
       font-size: 1.35rem;
     }
 
-    .contact-link {
-      text-decoration: underline;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .site-footer {
-      border-top: 1px solid var(--line);
-      padding: 1.4rem 0 2.5rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
     .service-image {
       width: 100%;
       height: 220px;
@@ -506,17 +487,103 @@
       box-shadow: 0 22px 50px rgba(23, 32, 51, 0.12);
     }
 
+    .service-row-enhanced {
+      padding: 1.4rem;
+    }
+
+    .service-row-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .service-row-image img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .service-row-content h2 {
+      margin-top: 0;
+    }
+
+    .service-row-enhanced:nth-child(even) .service-row-grid {
+      grid-template-columns: 1fr 220px;
+    }
+
+    .service-row-enhanced:nth-child(even) .service-row-image {
+      order: 2;
+    }
+
+    .contact-link {
+      text-decoration: underline;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 1.4rem 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-single {
+      display: flex;
+      justify-content: center;
+    }
+
+    .contact-card-wide {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .contact-email-row {
+      margin-top: 1rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .contact-response-note {
+      margin-top: 1rem;
+    }
+
+    .client-list {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .client-item {
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--text);
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
       .split,
       .two-col,
-      .mini-grid,
-      .info-grid {
+      .mini-grid {
         grid-template-columns: 1fr 1fr;
       }
 
       .services-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .service-row-grid,
+      .service-row-enhanced:nth-child(even) .service-row-grid {
+        grid-template-columns: 200px 1fr;
+      }
+
+      .service-row-enhanced:nth-child(even) .service-row-image {
+        order: 0;
       }
     }
 
@@ -556,7 +623,8 @@
       .two-col,
       .services-grid,
       .mini-grid,
-      .info-grid {
+      .service-row-grid,
+      .service-row-enhanced:nth-child(even) .service-row-grid {
         grid-template-columns: 1fr;
       }
 
@@ -568,18 +636,26 @@
         max-height: none;
       }
 
+      .service-row-image img {
+        height: 180px;
+      }
+
+      .service-row-enhanced:nth-child(even) .service-row-image {
+        order: 0;
+      }
+
       .brand-logo {
-  width: 72px;
-  height: 72px;
-}
+        width: 72px;
+        height: 72px;
+      }
 
-.brand-name {
-  font-size: 1.28rem;
-}
+      .brand-name {
+        font-size: 1.28rem;
+      }
 
-.brand-tag {
-  font-size: 0.8rem;
-}
+      .brand-tag {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -602,7 +678,7 @@
         <ul class="nav-links" id="nav-links">
           <li><a href="#/home" data-route="home">Home</a></li>
           <li><a href="#/services" data-route="services">Services</a></li>
-          <li><a href="#/projects" data-route="projects">Projects / Experience</a></li>
+          <li><a href="#/projects" data-route="projects">Experience</a></li>
           <li><a href="#/about" data-route="about">About</a></li>
           <li><a href="#/contact" data-route="contact" class="nav-cta">Contact</a></li>
         </ul>
@@ -699,38 +775,82 @@
         <div class="page-header">
           <h1 class="page-title">Services</h1>
           <p>
-            Leedham and Associates provides focused consulting support across four core areas designed to help modern organizations operate more effectively.
+            Leedham and Associates provides practical consulting services in IT strategy, database management, data integration, and custom application development.
           </p>
         </div>
 
         <div class="service-list">
-          <article class="service-row">
-            <img src="assets/images/strategy.jpg" class="service-image" alt="Technology strategy" />
-            <h2>Strategy</h2>
-            <p class="lead">Technology strategy, governance, roadmap development, and modernization planning.</p>
-            <p class="list-text">Support may include strategic assessments, initiative prioritization, budgeting alignment, policy considerations, and implementation planning.</p>
+          <article class="service-row service-row-enhanced">
+            <div class="service-row-grid">
+              <div class="service-row-image">
+                <img src="assets/images/strategy.jpg" alt="Technology strategy" />
+              </div>
+              <div class="service-row-content">
+                <h2>Technology Strategy & Planning</h2>
+                <p class="lead">
+                  Clear, actionable guidance to help organizations make better technology decisions.
+                </p>
+                <p class="list-text">
+                  Services include technology assessments, roadmap development, budgeting alignment, and the creation of policies and procedures that support long-term success. The focus is always on practical recommendations that fit real organizational constraints.
+                </p>
+              </div>
+            </div>
           </article>
 
-          <article class="service-row">
-            <img src="assets/images/data_management.png" class="service-image" alt="Data management" />
-            <h2>Data Management</h2>
-            <p class="lead">Improved information governance, reporting, analytics, and data organization.</p>
-            <p class="list-text">Support may include reporting frameworks, data quality improvement, process design, dashboard planning, and long-term information management practices.</p>
+          <article class="service-row service-row-enhanced">
+            <div class="service-row-grid">
+              <div class="service-row-image">
+                <img src="assets/images/data_management.png" alt="Data management" />
+              </div>
+              <div class="service-row-content">
+                <h2>Database Management & Data Integration</h2>
+                <p class="lead">
+                  Over 20 years of experience managing, improving, and connecting critical data systems.
+                </p>
+                <p class="list-text">
+                  Support includes database design and management, data cleanup and restructuring, custom data conversions, and integrations between systems. Emphasis is placed on reliability, performance, and making data more usable for reporting and operations.
+                </p>
+              </div>
+            </div>
           </article>
 
-          <article class="service-row">
-            <img src="assets/images/application_dev.jpg" class="service-image" alt="Application development" />
-            <h2>Application Development</h2>
-            <p class="lead">Custom applications and tools that support real operational needs.</p>
-            <p class="list-text">Support may include internal workflow tools, business process automation, lightweight portals, and purpose-built applications that reduce manual effort.</p>
+          <article class="service-row service-row-enhanced">
+            <div class="service-row-grid">
+              <div class="service-row-image">
+                <img src="assets/images/application_dev.jpg" alt="Application development" />
+              </div>
+              <div class="service-row-content">
+                <h2>Application Development & Workflow Solutions</h2>
+                <p class="lead">
+                  Custom-built tools that solve real operational problems.
+                </p>
+                <p class="list-text">
+                  Development of lightweight applications, internal tools, and workflow solutions designed to bridge gaps between systems, reduce manual effort, and improve efficiency. Solutions are built with maintainability and usability in mind.
+                </p>
+              </div>
+            </div>
           </article>
 
-          <article class="service-row">
-            <img src="assets/images/it_consulting.jpg" class="service-image" alt="IT consulting" />
-            <h2>IT Consulting</h2>
-            <p class="lead">Independent advisory support for evaluating, planning, and improving technology environments.</p>
-            <p class="list-text">Support may include vendor evaluation, solution selection, implementation oversight, modernization guidance, and practical recommendations for technology improvement.</p>
+          <article class="service-row service-row-enhanced">
+            <div class="service-row-grid">
+              <div class="service-row-image">
+                <img src="assets/images/it_consulting.jpg" alt="IT consulting" />
+              </div>
+              <div class="service-row-content">
+                <h2>IT Consulting & Advisory</h2>
+                <p class="lead">
+                  Independent, vendor-neutral guidance across a wide range of technology initiatives.
+                </p>
+                <p class="list-text">
+                  Services include system evaluation, vendor selection support, implementation planning, and ongoing advisory. The goal is to provide clear direction without unnecessary complexity or reliance on specific platforms.
+                </p>
+              </div>
+            </div>
           </article>
+
+          <div class="button-row" style="margin-top: 0.5rem;">
+            <a class="btn btn-primary" href="#/contact">Start a Conversation</a>
+          </div>
         </div>
       </div>
     </section>
@@ -740,120 +860,175 @@
         <div class="page-header">
           <h1 class="page-title">Projects / Experience</h1>
           <p>
-            This section is designed to highlight representative work, past initiatives, and practical experience that demonstrates the value Leedham and Associates can bring to client engagements.
+            Leedham and Associates brings experience across general IT consulting, database management, application development, and data integration.
           </p>
         </div>
 
         <div class="service-list">
           <article class="service-row">
-            <h2>Technology Strategy and Modernization Planning</h2>
-            <p class="lead">Support organizations in evaluating current systems, identifying priorities, and developing realistic modernization roadmaps.</p>
-            <p class="list-text">Use this area to describe strategic planning work, assessments, budgeting support, governance reviews, or multi-year technology planning initiatives.</p>
+            <h2>Consulting Background</h2>
+            <p class="lead">
+              Services include general IT consulting, including planning, policy and procedure development, and technology strategy.
+            </p>
+            <p class="list-text">
+              With over 20 years of database administration experience, Leedham and Associates provides database management, custom data conversions, and data integrations. A strong application development background also supports the creation of custom tools that help organizations bridge gaps between systems and tie applications together in practical ways.
+            </p>
           </article>
 
           <article class="service-row">
-            <h2>Data and Reporting Improvements</h2>
-            <p class="lead">Help organizations improve reporting, strengthen information practices, and make better use of operational data.</p>
-            <p class="list-text">Use this area to describe dashboard efforts, reporting redesign, records organization, data governance work, or analytics-related improvements.</p>
-          </article>
-
-          <article class="service-row">
-            <h2>Application and Workflow Solutions</h2>
-            <p class="lead">Design or guide the development of practical tools that improve efficiency and solve specific process challenges.</p>
-            <p class="list-text">Use this area to describe internal applications, workflow automation, process improvement tools, custom forms, portals, or operational systems.</p>
-          </article>
-
-          <article class="service-row">
-            <h2>Advisory and Implementation Support</h2>
-            <p class="lead">Provide independent consulting during evaluation, procurement, rollout, and improvement of technology solutions.</p>
-            <p class="list-text">Use this area to describe vendor coordination, implementation planning, project oversight, policy alignment, or business-side technology guidance.</p>
+            <h2>Select Clients</h2>
+            <p class="lead">
+              A sampling of organizations served over the last 20 years includes:
+            </p>
+            <div class="client-list">
+              <div class="client-item"><strong>Medina County Health Department, Ohio</strong> – GIS Consulting</div>
+              <div class="client-item"><strong>City of Medina, Ohio</strong> – IT Consulting</div>
+              <div class="client-item"><strong>Holmes County, Ohio</strong> – Database and Application Development</div>
+              <div class="client-item"><strong>Orange County, California</strong> – Database Consulting</div>
+              <div class="client-item"><strong>City of Poway, California</strong> – Web Development</div>
+              <div class="client-item"><strong>WebGIS Solutions</strong> – Database and Application Development</div>
+              <div class="client-item"><strong>City of Westlake, Ohio</strong> – Database and Application Development</div>
+              <div class="client-item"><strong>Auglaize County, Ohio</strong> – Database and Application Development</div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
     <section id="page-about" data-page class="hidden">
-      <div class="container">
-        <div class="page-header">
-          <h1 class="page-title">About</h1>
-          <p>
-            Leedham and Associates is built around a simple idea: technology should be practical, understandable, and useful to the organizations that depend on it.
-          </p>
-        </div>
+  <div class="container">
+    <div class="page-header">
+      <h1 class="page-title">About</h1>
+      <p>
+        Leedham and Associates is built around a simple principle: technology should be practical, understandable, and aligned with how organizations actually operate.
+      </p>
+    </div>
 
-        <div class="two-col">
-          <div class="panel">
-            <h2>Our approach</h2>
-            <div class="checklist">
-              <div class="check-item">
-                <div class="check">✓</div>
-                <div><strong>Clarity first</strong><br />Plain-language advice that helps leaders make confident decisions.</div>
-              </div>
+    <div class="two-col">
 
-              <div class="check-item">
-                <div class="check">✓</div>
-                <div><strong>Practical implementation</strong><br />Recommendations designed for actual staffing, budget, and process realities.</div>
-              </div>
+      <!-- LEFT SIDE -->
+      <div class="panel">
+        <h2>Our Approach</h2>
 
-              <div class="check-item">
-                <div class="check">✓</div>
-                <div><strong>Long-term value</strong><br />Solutions that are sustainable, supportable, and aligned with organizational priorities.</div>
-              </div>
+        <div class="checklist">
+          <div class="check-item">
+            <div class="check">✓</div>
+            <div>
+              <strong>Clarity first</strong><br />
+              We focus on clear, plain-language guidance that helps leaders make confident, informed decisions.
             </div>
           </div>
 
-          <div class="panel">
-            <h2>What we help organizations do</h2>
-            <div class="mini-grid">
-              <div class="mini-card"><strong>Modernize thoughtfully</strong>Improve systems and workflows without adding unnecessary complexity.</div>
-              <div class="mini-card"><strong>Strengthen governance</strong>Build better structure for data, applications, and decision-making.</div>
-              <div class="mini-card"><strong>Improve visibility</strong>Create more useful reporting and information practices.</div>
-              <div class="mini-card"><strong>Execute effectively</strong>Turn strategy into practical next steps and usable outcomes.</div>
+          <div class="check-item">
+            <div class="check">✓</div>
+            <div>
+              <strong>Practical implementation</strong><br />
+              Recommendations are grounded in real-world constraints—staffing, budgets, and operational realities.
+            </div>
+          </div>
+
+          <div class="check-item">
+            <div class="check">✓</div>
+            <div>
+              <strong>Technology as an enabler</strong><br />
+              Technology is applied where it adds value, not used as a default solution to every problem.
+            </div>
+          </div>
+
+          <div class="check-item">
+            <div class="check">✓</div>
+            <div>
+              <strong>Long-term value</strong><br />
+              Solutions are designed to be sustainable, supportable, and aligned with long-term organizational goals.
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+      <!-- RIGHT SIDE -->
+      <div class="panel">
+        <h2>How We Approach Innovation</h2>
+
+        <p>
+          With over a decade of experience serving as a Chief Innovation Officer, it may seem that technology is always the primary driver of improvement. In practice, however, technology is only one part of the solution—not the strategy itself.
+        </p>
+
+        <p>
+          Effective innovation begins with a clear understanding of the underlying problem. Many of the most impactful improvements come from non-technical changes—addressing behaviors, refining processes, and challenging the mindset of “this is the way we have always done it.”
+        </p>
+
+        <p>
+          Organizational complacency is often the greatest barrier to progress. Identifying inefficiencies at their source allows for more thoughtful and effective solutions.
+        </p>
+
+        <p>
+          Only after those opportunities are clearly understood does technology become part of the solution—applied in a way that supports real needs rather than driving unnecessary complexity.
+        </p>
+
+        <p>
+          Using this approach, Leedham and Associates has consistently delivered practical, strategic, and technology-enabled improvements that produce measurable results.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- FULL WIDTH SECTION -->
+    <div style="margin-top: 2rem;">
+      <div class="panel">
+        <h2>What We Help Organizations Do</h2>
+
+        <div class="mini-grid">
+          <div class="mini-card">
+            <strong>Modernize thoughtfully</strong>
+            Improve systems and workflows without adding unnecessary complexity.
+          </div>
+
+          <div class="mini-card">
+            <strong>Strengthen governance</strong>
+            Build better structure for data, applications, and decision-making.
+          </div>
+
+          <div class="mini-card">
+            <strong>Improve visibility</strong>
+            Create more useful reporting and information practices.
+          </div>
+
+          <div class="mini-card">
+            <strong>Execute effectively</strong>
+            Turn strategy into practical next steps and usable outcomes.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
     <section id="page-contact" data-page class="hidden">
       <div class="container">
         <div class="page-header">
           <h1 class="page-title">Contact</h1>
           <p>
-            This page can serve as your initial contact page until you purchase <strong>landa-it.com</strong> and set up a dedicated business email address.
+            For project inquiries, consulting discussions, or general questions, please reach out by email.
           </p>
         </div>
 
-        <div class="two-col">
-          <div class="contact-card">
+        <div class="contact-single">
+          <div class="contact-card contact-card-wide">
             <h3>Get in touch</h3>
-            <p>Use your future business email as the main contact method when the domain is active.</p>
-            <p><a class="contact-link" href="mailto:info@landa-it.com">info@landa-it.com</a></p>
+            <p>Please use the email below for all inquiries. We respond promptly to project and consulting requests.</p>
+
+            <p class="contact-email-row">
+              <a class="contact-link" href="mailto:info@landa-it.com">info@landa-it.com</a>
+            </p>
+
+            <p class="contact-response-note">
+              Responses are typically provided within one business day.
+            </p>
+
             <div class="button-row">
               <a class="btn btn-primary" href="mailto:info@landa-it.com">Email Now</a>
               <a class="btn btn-secondary" href="#/services">View Services</a>
-            </div>
-          </div>
-
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Domain plan</h3>
-              <p>When ready, connect this site to <strong>landa-it.com</strong> for a cleaner and more professional web address.</p>
-            </div>
-
-            <div class="info-card">
-              <h3>Business email</h3>
-              <p>Replace placeholder contact details with your active email once the domain is set up.</p>
-            </div>
-
-            <div class="info-card">
-              <h3>Future additions</h3>
-              <p>Add a case studies page, downloadable materials, or a contact form when you are ready.</p>
-            </div>
-
-            <div class="info-card">
-              <h3>Hosting simplicity</h3>
-              <p>This static version is designed to work cleanly on GitHub Pages without theme or build complications.</p>
             </div>
           </div>
         </div>
